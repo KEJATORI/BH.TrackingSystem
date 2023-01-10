@@ -1,0 +1,65 @@
+<div [ngClass]="{'hidden': isHidden}" class="nav-container">
+  <div class="nav-header">
+    <a [routerLink]="['/']">
+      <i class="bi bi-bootstrap-fill"></i>
+      <span>Bautista Hospital</span>
+    </a>
+  </div>
+  <div class="nav-content">
+    <ul>
+      <li placement="end" [ngbTooltip]="isHidden ? 'Dashboard' : ''">
+        <a [routerLink]="['/dashboard']" 
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="bi bi-house-fill"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li placement="end" [ngbTooltip]="isHidden ? 'Visitor Information' : ''">
+        <a [routerLink]="['/visitor-information']" 
+          routerLinkActive="active">
+          <i class="bi bi-people-fill"></i>
+          <span>Visitor Information</span>
+        </a>
+      </li>
+      <li placement="end" [ngbTooltip]="isHidden ? 'Employee Information' : ''">
+        <a [routerLink]="['/employee-information']" 
+          routerLinkActive="active">
+          <i class="bi bi-person-vcard-fill"></i>
+          <span>Employee Information</span>
+        </a>
+      </li>
+      <li placement="end" [ngbTooltip]="isHidden ? 'Patient Information' : ''">
+        <a [routerLink]="['/patient-information']" 
+          routerLinkActive="active">
+          <i class="bi bi-person-fill"></i>
+          <span>Patient Information</span>
+        </a>
+      </li>
+      <li placement="end" [ngbTooltip]="isHidden ? 'Compose Message' : ''">
+        <a [routerLink]="['/compose-message']" 
+           routerLinkActive="active">
+          <i class="bi bi-envelope-fill"></i>
+          <span>Compose Message</span>
+        </a>
+      </li>
+      <li placement="end" [ngbTooltip]="isHidden ? 'Generate QR Code' : ''">
+        <a [routerLink]="['/generate-qr-code']" 
+          routerLinkActive="active">
+          <i class="bi bi-qr-code-scan"></i>
+          <span>Generate QR Code</span>
+        </a>
+      </li>
+      <li placement="end" [ngbTooltip]="isHidden ? 'Personel Activity Tracker' : ''">
+        <a [routerLink]="['/personel-activity-tracker']" 
+          routerLinkActive="active">
+          <i class="bi bi-bar-chart-fill"></i>
+          <span>Personel Activity Tracker</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div (click)="onToggleSidebar()" class="nav-footer" placement="end" ngbTooltip="{{ isHidden ? 'Open' : 'Hide' }}">
+    <i [ngClass]="isHidden ? 'bi bi-chevron-double-right' : 'bi bi-chevron-double-left'"></i>
+  </div>
+</div>

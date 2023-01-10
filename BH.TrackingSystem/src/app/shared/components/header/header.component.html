@@ -1,0 +1,29 @@
+<div class="header-container">
+  <div class="header-title">
+    <ng-container *ngIf="(breadcrumbs$ | async) as breadcrumbs">
+      <h2 class="m-1">{{ breadcrumbs.length > 0 && breadcrumbs[breadcrumbs.length-1].label }}</h2>
+    </ng-container>
+  </div>
+  <div class="header-time">
+    <span>{{ time | date :'E, MMM-d-y, h:mm:ss a' }}</span>
+  </div>
+  <div class="header-profile">
+    <i class="bi bi-person-circle"></i>
+    <h2>Admin</h2>
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <i class="dropdown-btn" ngbDropdownToggle></i>
+        <div ngbDropdownMenu >
+          <button class="dropdown-item-btn" ngbDropdownItem>
+            <i class="bi bi-gear"></i>
+            <span>Account Settings</span>
+          </button>
+          <button class="dropdown-item-btn" ngbDropdownItem>
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
